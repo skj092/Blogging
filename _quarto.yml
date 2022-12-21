@@ -8,9 +8,9 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/skj092
       - icon: twitter
-        href: https://twitter.com
+        href: https://twitter.com/Sonu_Kumar_Jha
 format:
   html:
     theme: cosmo

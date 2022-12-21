@@ -6,13 +6,13 @@ about:
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/Sonu_Kumar_Jha
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/sonujha092/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/skj092
 
 ---
 
