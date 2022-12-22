@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2022-11-12">
 
-<title>Sonu – docker</title>
+<title>Home - Mastering Git- A Comprehensive Tutorial for Moderate and Advanced Users</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Sonu</span>
+    <span class="navbar-title">Home</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -163,7 +164,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Mastering Git- A Comprehensive Tutorial for Moderate and Advanced Users</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 12, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -172,49 +195,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
+<p><img src="git.jpg" class="img-fluid"></p>
+<p>Are you a developer looking to up your Git game? Look no further! In this tutorial, we’ll cover everything you need to know about using Git for version control, from the basics for those who are just starting out, to advanced techniques for more experienced users.</p>
+<p>First, let’s start with a quick overview of what Git is and why it’s so important. Git is a distributed version control system that allows developers to track changes to their codebase and collaborate with team members on projects. It helps to keep track of every modification made to the code, as well as who made those changes and when. This makes it easy to roll back changes if something goes wrong, and also allows multiple developers to work on the same project simultaneously without overwriting each other’s work.</p>
+<p>Now that we’ve got the basics out of the way, let’s dive into some of the key Git commands that you’ll need to know.</p>
+<p><strong>Basic Git Commands</strong> * <code>git init</code>: This command is used to initialize a new Git repository. * <code>git clone</code>: This command is used to create a local copy of a remote repository. * <code>git add</code>: This command is used to add new files to the staging area. * <code>git commit</code>: This command is used to save changes to the local repository. * <code>git push</code>: This command is used to send your local commits to a remote repository. * <code>git pull</code>: This command is used to retrieve updates from a remote repository and merge them with your local repository.</p>
+<p><strong>Advanced Git Commands</strong> * <code>git stash</code>: This command is used to temporarily save changes that are not ready to be committed. * <code>git branch</code>: This command is used to create and manage branches in a Git repository. * <code>git merge</code>: This command is used to merge changes from one branch into another. * <code>git rebase</code>: This command is used to reapply commits on top of another base commit.</p>
+<p>Here’s an example of how you might use these commands in a real-world scenario. Let’s say you’re working on a feature for a project and you want to create a new branch for your work. You can use the <code>git branch</code> command to create a new branch, then use <code>git checkout</code> to switch to that branch.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title: Getting Started <span class="cf">with</span> Docker <span class="op">-</span> A Beginner<span class="st">'s Guide</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="er">subtitle: A step-by-step tutorial on how to build and run your applications using Docker containers.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="er">date: 05/07/2020 </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="er">draft: true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="er">format:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="er">    html: </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="er">        code-fold: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="er">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ git branch feature<span class="op">-</span>x</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>$ git checkout feature<span class="op">-</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Title: Subtitle: A step-by-step tutorial on how to build and run your applications using Docker containers.</p>
-<p>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.</p>
-<p>To start using Docker, you will first need to install it on your system. You can find installation instructions for various operating systems on the Docker website.</p>
-<p>Once Docker is installed, you can start using it to build and run your applications. The first step is to create a <code>Dockerfile</code>, which is a text file that contains all of the instructions needed to build an image.</p>
-<p>Here’s an example <code>Dockerfile</code> for a simple Python application:</p>
+<p>Now, you can make changes to your code and use <code>git add</code> and <code>git commit</code> to save your progress. When you’re ready to merge your changes back into the main branch, you can use the git merge command.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>FROM python:<span class="dv">3</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>COPY . <span class="op">/</span>app</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>WORKDIR <span class="op">/</span>app</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>RUN pip install <span class="op">-</span>r requirements.txt</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>CMD [<span class="st">"python"</span>, <span class="st">"app.py"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>$ git add main.c</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>$ git commit <span class="op">-</span>m <span class="st">"Add feature x"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>$ git checkout master</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>$ git merge feature<span class="op">-</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This <code>Dockerfile</code> starts with the <code>FROM</code> directive, which specifies the base image that the rest of the instructions will be built on top of. In this case, we’re using a base image that contains the latest version of Python 3.</p>
-<p>Next, the <code>COPY</code> and <code>WORKDIR</code> directives are used to copy the contents of the current directory into the <code>/app</code> directory in the container and set that as the working directory.</p>
-<p>The <code>RUN</code> directive is used to run a command in the container, in this case installing the dependencies specified in the <code>requirements.txt</code> file.</p>
-<p>Finally, the <code>CMD</code> directive is used to specify the command that will be run when the container is started. In this case, we’re running the app.py Python script.</p>
-<p>To build an image based on this <code>Dockerfile</code>, you can use the <code>docker build</code> command. For example:</p>
+<p>This will merge the changes from your <code>feature-x`` branch into the</code>master`` branch.</p>
+<p><strong>Resolving conflicts</strong></p>
+<p>One thing that can happen when working with Git is that you may run into conflicts when merging branches. This can happen when multiple people have made changes to the same lines of code in different branches, and Git doesn’t know which changes to keep.</p>
+<p>To resolve these conflicts, you’ll need to edit the affected files and decide which changes to keep. Then, you’ll need to use the <code>git add</code> command to mark the conflicts as resolved and commit the changes.</p>
+<p>Here’s an example of how you might do this:</p>
+<p>$ git merge feature-y Updating a422352..5fdff0f error: Merge conflict in main.c Auto-merging main.c CONFLICT (content): Merge conflict in main.c Automatic merge failed; fix conflicts and then commit the result.</p>
+<p>This message tells you that there was a conflict when trying to merge <code>feature-y</code> into the current branch. You’ll need to open <code>main.c</code> and look for the following markers:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$ docker build <span class="op">-</span>t my<span class="op">-</span>app .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Current branch version</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">=======</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Incoming branch version</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> feature<span class="op">-</span>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This will build an image with the tag <code>my-app</code> based on the instructions in the <code>Dockerfile</code>.</p>
-<p>Once the image is built, you can use the <code>docker run</code> command to start a container based on that image. For example:</p>
+<p>You’ll need to decide which changes to keep and delete the conflict markers. Then, you can use <code>git add</code> to mark the file as resolved and commit the changes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$ docker run <span class="op">-</span>p <span class="dv">8000</span>:<span class="dv">8000</span> my<span class="op">-</span>app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$ git add main.c</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>$ git commit <span class="op">-</span>m <span class="st">"Resolve conflicts"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This will start a container based on the <code>my-app</code> image and map the container’s port 8000 to the host’s port 8000, so that the application can be accessed on http://localhost:8000.</p>
-<p>There are many more options and directives that you can use in a <code>Dockerfile</code> and with the docker command, but this should give you a basic understanding of how to use <code>Docker</code> to build and run a simple application.</p>
+<p><strong>Git aliases</strong></p>
+<p>Another useful tip is to create aliases for frequently used Git commands. This can save you time and typing by allowing you to use shorter versions of commands. For example, you can create an alias for <code>git commit -m</code> with the following command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$ git config <span class="op">--</span><span class="kw">global</span> alias.cm <span class="st">"commit -m"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, instead of typing <code>git commit -m "Commit message"</code>, you can simply use <code>git cm "Commit message"</code>. You can create aliases for any Git command in this way.</p>
+<p><strong>Git hooks</strong></p>
+<p>Git hooks are scripts that can be used to automate tasks when certain Git events occur. For example, you can use a hook to automatically run tests before committing code, or to send a notification when a branch is pushed to a remote repository.</p>
+<p>There are two types of hooks: client-side and server-side. Client-side hooks are stored in the `.git/hooks`` directory of a repository and are executed on the developer’s machine. Server-side hooks are stored on the server and are executed when certain events occur on the server, such as when a new commit is pushed.</p>
+<p>To use Git hooks, you’ll need to create a script in the appropriate hook directory and make it executable. The script should contain the commands that you want to run when the hook is triggered.</p>
+<p>Here’s an example of a client-side pre-commit hook that runs tests before allowing a commit:</p>
+<p>#!/bin/sh</p>
+<section id="run-tests" class="level1">
+<h1>Run tests</h1>
+<p>./run-tests.sh</p>
+</section>
+<section id="check-the-exit-code" class="level1">
+<h1>Check the exit code</h1>
+<p>if [ $? -ne 0 ] then echo “Tests failed. Commit aborted.” exit 1 fi</p>
+<p>There are many other Git commands and techniques that we haven’t covered here, but this should give you a good foundation to start from. With practice and experience, you’ll become a Git pro in no time!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
