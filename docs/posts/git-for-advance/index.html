@@ -244,18 +244,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are two types of hooks: client-side and server-side. Client-side hooks are stored in the `.git/hooks`` directory of a repository and are executed on the developer’s machine. Server-side hooks are stored on the server and are executed when certain events occur on the server, such as when a new commit is pushed.</p>
 <p>To use Git hooks, you’ll need to create a script in the appropriate hook directory and make it executable. The script should contain the commands that you want to run when the hook is triggered.</p>
 <p>Here’s an example of a client-side pre-commit hook that runs tests before allowing a commit:</p>
-<p>#!/bin/sh</p>
-<section id="run-tests" class="level1">
-<h1>Run tests</h1>
-<p>./run-tests.sh</p>
-</section>
-<section id="check-the-exit-code" class="level1">
-<h1>Check the exit code</h1>
-<p>if [ $? -ne 0 ] then echo “Tests failed. Commit aborted.” exit 1 fi</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/sh</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run tests</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>.<span class="op">/</span>run<span class="op">-</span>tests.sh</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the exit code</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> [ $? <span class="op">-</span>ne <span class="dv">0</span> ]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>then</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  echo <span class="st">"Tests failed. Commit aborted."</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  exit <span class="dv">1</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>fi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>There are many other Git commands and techniques that we haven’t covered here, but this should give you a good foundation to start from. With practice and experience, you’ll become a Git pro in no time!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
