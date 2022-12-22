@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2020-05-07">
 
-<title>Sonu – docker</title>
+<title>Sonu - Evolution of Artificial Neural Network(ANN)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -163,7 +164,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Evolution of Artificial Neural Network(ANN)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 7, 2020</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -172,49 +195,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
+<p>Are you new to version control and wondering what all the fuss is about? Git is a version control system that allows you to track changes to your code and collaborate with others on software projects. In this article, we’ll go over the basics of git and how it can help streamline your workflow using Python.</p>
+<p>Imagine you’re working on a Python project with a team of developers. You’re all making changes to the codebase, and things can get confusing fast. Without a way to track these changes, it can be difficult to know who made what change and when. This is where git comes in.</p>
+<p>To start using git, you’ll need to set up a repository. A repository is a central location where all the code and changes for your project are stored. You can create a repository on your local machine or on a remote server like GitHub. Here’s how to create a repository on your local machine using the command line:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title: Getting Started <span class="cf">with</span> Docker <span class="op">-</span> A Beginner<span class="st">'s Guide</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="er">subtitle: A step-by-step tutorial on how to build and run your applications using Docker containers.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="er">date: 05/07/2020 </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="er">draft: true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="er">format:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="er">    html: </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="er">        code-fold: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="er">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p>Title: Subtitle: A step-by-step tutorial on how to build and run your applications using Docker containers.</p>
-<p>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.</p>
-<p>To start using Docker, you will first need to install it on your system. You can find installation instructions for various operating systems on the Docker website.</p>
-<p>Once Docker is installed, you can start using it to build and run your applications. The first step is to create a <code>Dockerfile</code>, which is a text file that contains all of the instructions needed to build an image.</p>
-<p>Here’s an example <code>Dockerfile</code> for a simple Python application:</p>
+<p>Once you have a repository set up, you’ll need to “commit” your changes. A commit is a snapshot of your code at a specific point in time. When you make a commit, you’ll also include a commit message that explains what changes you made. This helps you and your teammates understand what was changed and why. Here’s how to make a commit in git:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>FROM python:<span class="dv">3</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>COPY . <span class="op">/</span>app</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>WORKDIR <span class="op">/</span>app</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>RUN pip install <span class="op">-</span>r requirements.txt</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>CMD [<span class="st">"python"</span>, <span class="st">"app.py"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>$ git add .</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>$ git commit <span class="op">-</span>m <span class="st">"Commit message goes here"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p>This <code>Dockerfile</code> starts with the <code>FROM</code> directive, which specifies the base image that the rest of the instructions will be built on top of. In this case, we’re using a base image that contains the latest version of Python 3.</p>
-<p>Next, the <code>COPY</code> and <code>WORKDIR</code> directives are used to copy the contents of the current directory into the <code>/app</code> directory in the container and set that as the working directory.</p>
-<p>The <code>RUN</code> directive is used to run a command in the container, in this case installing the dependencies specified in the <code>requirements.txt</code> file.</p>
-<p>Finally, the <code>CMD</code> directive is used to specify the command that will be run when the container is started. In this case, we’re running the app.py Python script.</p>
-<p>To build an image based on this <code>Dockerfile</code>, you can use the <code>docker build</code> command. For example:</p>
+<p>You can also create branches in your repository. A branch is a copy of your code that you can work on without affecting the main codebase. This is useful when you’re working on a new feature or trying out an experimental change. When you’re finished with your branch, you can merge it back into the main codebase. Here’s how to create and switch to a new branch in git:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$ docker build <span class="op">-</span>t my<span class="op">-</span>app .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$ git branch new_branch</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>$ git checkout new_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p>This will build an image with the tag <code>my-app</code> based on the instructions in the <code>Dockerfile</code>.</p>
-<p>Once the image is built, you can use the <code>docker run</code> command to start a container based on that image. For example:</p>
+<p>Git also has the ability to resolve conflicts. If two people make changes to the same part of the code, git will alert you to a conflict. You’ll then need to manually resolve the conflict by deciding which changes to keep and which to discard. Here’s an example of how to resolve a conflict in git:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$ docker run <span class="op">-</span>p <span class="dv">8000</span>:<span class="dv">8000</span> my<span class="op">-</span>app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$ git merge other_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p>This will start a container based on the <code>my-app</code> image and map the container’s port 8000 to the host’s port 8000, so that the application can be accessed on http://localhost:8000.</p>
-<p>There are many more options and directives that you can use in a <code>Dockerfile</code> and with the docker command, but this should give you a basic understanding of how to use <code>Docker</code> to build and run a simple application.</p>
+<p>If a conflict is detected, git will show you the conflicting files and mark the conflicting lines with &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt;. You’ll need to edit the files and remove the conflict markers, keeping the changes that you want to keep and discarding the others. Then, you can add and commit the resolved files to finish merging the branches.</p>
+<p>Git may seem intimidating at first, but it’s a powerful tool that can greatly improve your workflow. Whether you’re working on a small Python project or a large software development team, git can help you keep track of changes and collaborate with others more efficiently.</p>
+<section id="working-on-some-remote-git-repository" class="level2">
+<h2 class="anchored" data-anchor-id="working-on-some-remote-git-repository">Working on some remote git repository</h2>
+<p>Here are the basic steps you can follow to work on a remote git repository:</p>
+<ol type="1">
+<li><p>Install git on your local machine: Before you can start working with a remote repository, you’ll need to have git installed on your local machine. You can download and install git from the official website (https://git-scm.com/) or through your operating system’s package manager.</p></li>
+<li><p>Clone the repository: To work with a remote repository, you’ll first need to create a local copy of the repository on your machine. This is called “cloning” the repository. To clone a repository, you’ll need to know the repository’s URL. You can usually find the URL on the repository’s website or by looking for the “Clone or download” button on the repository’s page.</p></li>
+</ol>
+<p>To clone the repository, open a terminal or command prompt and navigate to the directory where you want to store the local copy of the repository. Then, run the following command:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$ git clone repository_url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Replace “repository_url” with the actual URL of the repository. This will create a new directory with the same name as the repository and download all the files and directories from the remote repository into it.</p>
+<ol type="1">
+<li>Create a new branch: It’s a good practice to create a new branch for your changes, rather than making changes directly to the main branch of the repository. This way, you can keep your changes separate from the main codebase and easily switch between different versions of the code.</li>
+</ol>
+<p>To create a new branch, navigate to the local copy of the repository on your machine and run the following command:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>$ git branch new_branch</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>$ git checkout new_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Replace “new_branch” with the name you want to give to your branch. This will create a new branch with the specified name and switch to it.</p>
+<ol type="1">
+<li>Make and commit your changes: Once you’re on your new branch, you can start making changes to the code. When you’re finished with your changes, you’ll need to “commit” them to the repository. A commit is a snapshot of your code at a specific point in time, and it allows you to track your changes and roll back to previous versions if necessary.</li>
+</ol>
+<p>To commit your changes, run the following commands:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>$ git add .</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>$ git commit <span class="op">-</span>m <span class="st">"Commit message goes here"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The first command, git add, stages your changes for commit. The second command, git commit, creates a commit with your staged changes and the specified commit message.</p>
+<ol type="1">
+<li>Push your changes to the remote repository: Once you’ve committed your changes, you’ll need to push them to the remote repository so that others can see and work with them. To push your changes, run the following command:</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>$ git push origin new_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Replace “new_branch” with the name of the branch you want to push. This will send your changes to the remote repository and make them available to others.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
