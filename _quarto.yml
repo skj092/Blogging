@@ -13,7 +13,8 @@ website:
         href: https://twitter.com/Sonu_Kumar_Jha
 format:
   html:
-    theme: cosmo
+    theme:
+      dark: darkly
     css: styles.css
 
 
