@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Kaggle-birdclif/index.html",
+      "/posts/kaggle-Harmful-Brain-Activity-Classification/index.html",
       "/posts/docker/index.html",
       "/posts/read-better/index.html",
       "/posts/git-for-advance/index.html",

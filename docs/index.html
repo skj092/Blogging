@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -96,16 +103,43 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Home</span>
     </a>
@@ -117,24 +151,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/skj092" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/skj092"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/Sonu_Kumar_Jha" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/Sonu_Kumar_Jha"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -147,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -160,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -171,152 +205,209 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1671647400000" data-listing-file-modified-sort="1696823281691" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1713465000000" data-listing-file-modified-sort="1713504514408" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="487">
 <div class="thumbnail">
-<p><a href="./posts/docker/index.html"> <p class="card-img-top"><img src="posts/docker/docker.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/Kaggle-birdclif/index.html" class="no-external"></a></p><a href="./posts/Kaggle-birdclif/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/Kaggle-birdclif/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/docker/index.html">
 <h3 class="no-anchor listing-title">
-Getting Started with Docker - A Beginner’s Guide
+<a href="./posts/Kaggle-birdclif/index.html" class="no-external">BirdCLEF 2024</a>
 </h3>
 <div class="listing-subtitle">
-A step-by-step tutorial on how to build and run your applications using Docker containers.
+<a href="./posts/Kaggle-birdclif/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Docker is a tool designed to make it easier to create, deploy, and run applications by using…
+<a href="./posts/Kaggle-birdclif/index.html" class="no-external">My Understanding of the comptition so far</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Kaggle-birdclif/index.html" class="no-external">
+<div class="listing-date">
+Apr 19, 2024
+</div>
+<div class="listing-author">
+Sonu Jha
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1709231400000" data-listing-file-modified-sort="1711172710746" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="673">
+<div class="thumbnail">
+<p><a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external"></a></p><a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/kaggle-Harmful-Brain-Activity-Classification/traincsv.png" alt="Train CSV file"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external">HMS - Harmful Brain Activity Classification</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external">The goal of this competition is to detect and classify seizures and other types of harmful brain activity. You will develop a model trained on electroencephalography (EEG)…</a>
+</div>
+</div>
 <div class="metadata">
-<a href="./posts/docker/index.html">
+<a href="./posts/kaggle-Harmful-Brain-Activity-Classification/index.html" class="no-external">
+<div class="listing-date">
+Mar 1, 2024
+</div>
+<div class="listing-author">
+Sonu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1671647400000" data-listing-file-modified-sort="1711172710399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="356">
+<div class="thumbnail">
+<p><a href="./posts/docker/index.html" class="no-external"></a></p><a href="./posts/docker/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/docker/docker.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/docker/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/docker/index.html" class="no-external">Getting Started with Docker - A Beginner’s Guide</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/docker/index.html" class="no-external">A step-by-step tutorial on how to build and run your applications using Docker containers.</a>
+</div>
+<div class="listing-description">
+<a href="./posts/docker/index.html" class="no-external">Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/docker/index.html" class="no-external">
 <div class="listing-date">
 Dec 22, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1668969000000" data-listing-file-modified-sort="1696823281715" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1668969000000" data-listing-file-modified-sort="1711172710698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
 <div class="thumbnail">
-<p><a href="./posts/read-better/index.html"> <p class="card-img-top"><img src="posts/read-better/books.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/read-better/index.html" class="no-external"></a></p><a href="./posts/read-better/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/read-better/books.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/read-better/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/read-better/index.html">
 <h3 class="no-anchor listing-title">
-Read Efficiently
+<a href="./posts/read-better/index.html" class="no-external">Read Efficiently</a>
 </h3>
 <div class="listing-subtitle">
-Best way to read and take notes to improve yourself
+<a href="./posts/read-better/index.html" class="no-external">Best way to read and take notes to improve yourself</a>
 </div>
 <div class="listing-description">
-Reading and taking notes are important skills that can help you learn and grow. By reading, you expose yourself to new ideas and perspectives, and by taking notes, you can…
+<a href="./posts/read-better/index.html" class="no-external">Reading and taking notes are important skills that can help you learn and grow. By reading, you expose yourself to new ideas and perspectives, and by taking notes, you can…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/read-better/index.html">
+<a href="./posts/read-better/index.html" class="no-external">
 <div class="listing-date">
 Nov 21, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1668191400000" data-listing-file-modified-sort="1696823281703" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1668191400000" data-listing-file-modified-sort="1711172710562" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="830">
 <div class="thumbnail">
-<p><a href="./posts/git-for-advance/index.html"> <p class="card-img-top"><img src="posts/git-for-advance/git.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/git-for-advance/index.html" class="no-external"></a></p><a href="./posts/git-for-advance/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/git-for-advance/git.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/git-for-advance/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/git-for-advance/index.html">
 <h3 class="no-anchor listing-title">
-Mastering Git- A Comprehensive Tutorial for Moderate and Advanced Users
+<a href="./posts/git-for-advance/index.html" class="no-external">Mastering Git- A Comprehensive Tutorial for Moderate and Advanced Users</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/git-for-advance/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Are you a developer looking to up your Git game? Look no further! In this tutorial…
+<a href="./posts/git-for-advance/index.html" class="no-external">Are you a developer looking to up your Git game? Look no further! In this tutorial, we’ll cover everything you need to know about using Git for version control, from the…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/git-for-advance/index.html">
+<a href="./posts/git-for-advance/index.html" class="no-external">
 <div class="listing-date">
 Nov 12, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1653330600000" data-listing-file-modified-sort="1696823281691" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1653330600000" data-listing-file-modified-sort="1711172710375" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
 <div class="thumbnail">
-<p><a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html"> <p class="card-img-top"><img src="posts/detect-face-and-blur/face.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external"></a></p><a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external">
+<p class="card-img-top"><img src="posts/detect-face-and-blur/face.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html">
 <h3 class="no-anchor listing-title">
-Blur the face in an image or video
+<a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external">Blur the face in an image or video</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Blurring the face area of people from videos is done in all news channels and to hide the identity of a person. With computer vision, We can…
+<a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external">Blurring the face area of people from videos is done in all news channels and to hide the identity of a person. With computer vision, We can automatically detect the face…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html">
+<a href="./posts/detect-face-and-blur/2022-05-24-Detect-Face-And-Blur.html" class="no-external">
 <div class="listing-date">
 May 24, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1620325800000" data-listing-file-modified-sort="1696823281711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1620325800000" data-listing-file-modified-sort="1711172710666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="888">
 <div class="thumbnail">
-<p><a href="./posts/git/index.html"> <p class="card-img-top"><img src="posts/git/git.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/git/index.html" class="no-external"></a></p><a href="./posts/git/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/git/git.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/git/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/git/index.html">
 <h3 class="no-anchor listing-title">
-Getting Started with Git- A Step-by-Step Tutorial
+<a href="./posts/git/index.html" class="no-external">Getting Started with Git- A Step-by-Step Tutorial</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/git/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Are you new to version control and wondering what all the fuss is about? Git is a version control system that allows you to track…
+<a href="./posts/git/index.html" class="no-external">Are you new to version control and wondering what all the fuss is about? Git is a version control system that allows you to track changes to your code and collaborate with…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/git/index.html">
+<a href="./posts/git/index.html" class="no-external">
 <div class="listing-date">
 May 7, 2021
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1588789800000" data-listing-file-modified-sort="1696823281451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1588789800000" data-listing-file-modified-sort="1711172709231" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="412">
 <div class="thumbnail">
-<p><a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html"> <p class="card-img-top"><img src="posts/ANN/ai.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external"></a></p><a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external">
+<p class="card-img-top"><img src="posts/ANN/ai.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html">
 <h3 class="no-anchor listing-title">
-Evolution of Artificial Neural Network(ANN)
+<a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external">Evolution of Artificial Neural Network(ANN)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Artificial intelligence (AI) is a branch of computer science capable of performing tasks that typically require human intelligence.
+<a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external">Artificial intelligence (AI) is a branch of computer science capable of performing tasks that typically require human intelligence.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html">
+<a href="./posts/ANN/2020-07-05-Evolution-of-Artificial-Neural-Network(ANN).html" class="no-external">
 <div class="listing-date">
 May 7, 2020
 </div>
@@ -369,6 +460,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -437,13 +555,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -522,10 +642,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -535,8 +672,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -548,7 +694,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -592,6 +861,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -617,6 +887,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -677,6 +973,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

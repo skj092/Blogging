@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2020-05-07">
+<meta name="author" content="Sonu Jha">
+<meta name="dcterms.date" content="2024-04-19">
+<meta name="description" content="My Understanding of the comptition so far">
 
-<title>Home - Evolution of Artificial Neural Network(ANN)</title>
+<title>Home - BirdCLEF 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -104,35 +72,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -180,18 +119,29 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Evolution of Artificial Neural Network(ANN)</h1>
-                      </div>
+      <h1 class="title">BirdCLEF 2024</h1>
+                  <div>
+        <div class="description">
+          My Understanding of the comptition so far
+        </div>
+      </div>
+                </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Sonu Jha </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 7, 2020</p>
+        <p class="date">April 19, 2024</p>
       </div>
     </div>
     
@@ -210,162 +160,108 @@ window.Quarto = {
 
 
 
-<p><img src="ai.jpg" class="img-fluid"></p>
-<section id="artificial-intelligence" class="level2">
-<h2 class="anchored" data-anchor-id="artificial-intelligence">Artificial Intelligence</h2>
-<p>Artificial intelligence (AI) is a branch of computer science capable of performing tasks that typically require human intelligence.</p>
+<section id="aim-to-identify-bird-species-from-their-sounds" class="level2">
+<h2 class="anchored" data-anchor-id="aim-to-identify-bird-species-from-their-sounds">AIM: To Identify Bird Species from their Sounds</h2>
 </section>
-<section id="what-is-deep-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-deep-learning">What is Deep Learning?</h2>
-<blockquote class="blockquote">
-<p>deep learning is a more approachable name for an artificial neural network. The “deep” in deep learning refers to the depth of the network. An artificial neural network can be very shallow.</p>
-</blockquote>
+<section id="provided-data" class="level2">
+<h2 class="anchored" data-anchor-id="provided-data">Provided Data</h2>
 <ul>
-<li>Machine learning is the science of getting computers to act without being explicitly programmed.</li>
+<li><strong>train_audios</strong>: Contain 182 folders, each folder contain multiple audio files of particular bird species.</li>
+<li><strong>train_metadata.csv</strong>: Contain metadata of each audio file.</li>
+<li><strong>unlabeled_soundscapes</strong>: Contain multiple audio files of bird sounds.</li>
+<li><strong>eBIrd_Taxonomy_v2021.csv</strong>: Data on the relationships between different species.</li>
+<li><strong>test_soundscapes</strong>: Only the hidden rerun copy of the test soundscape dirctory will only be populated.</li>
+<li><strong>SampleSubmission.csv</strong>: A sample submission file in the correct format. First column is the filename, and remaining are scores for each bird species.</li>
 </ul>
 </section>
-<section id="ann-artificial-neural-networks" class="level2">
-<h2 class="anchored" data-anchor-id="ann-artificial-neural-networks">ANN: Artificial Neural Networks</h2>
+<section id="evaluation-metric" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-metric">Evaluation Metric</h2>
 <ul>
-<li>ANNs are inspired by biological neurons found in cerebral cortex of our brain.</li>
-</ul>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Blausen_0657_MultipolarNeuron.png/1200px-Blausen_0657_MultipolarNeuron.png" class="img-fluid"></p>
-<ul>
-<li>A neuron or nerve cell is an electrically excitable cell that communicates with other cells via specialized connections called synapses.</li>
-<li>ANNs are <strong>core of deep learning</strong>. Hence one of the most important topic to understand.</li>
+<li>A version of macro-averaged ROC-AUC that skips classes which have no true positive labels.</li>
 </ul>
 </section>
-<section id="perceptron" class="level2">
-<h2 class="anchored" data-anchor-id="perceptron">Perceptron</h2>
-<p><strong>A Perceptron is one of the simplese ANN architectures, invented in 1957 by Frank Rosenblatt.</strong></p>
-<blockquote class="blockquote">
-<p>A perceptron works similar to a biological neuron. A biological neuron receives electrical signals from its <em>dendriles</em>, modulates the electrical signals in various amounts, and then fires an output signal through its <em>synapses</em> only when the total strength of the input signals exceeds a certain threshold. The output is then fed to another neuron, and so forth.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>To model the biological phenomenon, the artificial neuron performs two consecutive functions: it calculates the <em>weighted sum</em> of the inputs to represent the totgal strength of the input signals, and it applies a <em>step function</em> to the result to determine whether to fire the ourput 1 if the signal exceeds a certain threshold of 0 if the signal doesn’t exceed the threshold.</p>
-</blockquote>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/ArtificialNeuronModel_english.png/1200px-ArtificialNeuronModel_english.png" class="img-fluid"></p>
-<p><strong>How Peceptron Works?</strong></p>
-<p>The perceptron’s learning logic goes like this:</p>
+<section id="dataset-info" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-info">Dataset Info</h2>
+<ul>
+<li>train audio are in different length and sample rate is 32000</li>
+<li>If an audio is for 6 second, when you read with soundfile, it will be 6*32000 = 192000 samples</li>
+<li>So the size of array will be (192000,)</li>
+<li>Since we have to predict for each 5 second, we will split the audio into 5 second.</li>
+<li>Now, will select one of the 5 second audio and convert it into melspectrogram of shape (3, 128, 201)</li>
+<li>When we make batch of it the shape will be (bs, 3, 128, 201)</li>
+<li>Model will give output of shape (bs, num_classes), i.e.&nbsp;(bs, 182)</li>
+</ul>
+</section>
+<section id="status" class="level2">
+<h2 class="anchored" data-anchor-id="status">Status</h2>
 <ol type="1">
-<li>The neuron calculate the weighted sum and applies the activation function to make a prediction y<sup>^</sup>. This is called the feedforward process:</li>
+<li>Setup local evaluation for the competition metric</li>
+<li>Do more EDA on the available data</li>
+<li>Apply augmentation in the next submission.</li>
 </ol>
-<p><span class="math display">\[y\hat{} =  activation\left(\sum\nolimits x_i \cdot w_i + b\right)\]</span></p>
-<ol start="2" type="1">
-<li>It compares the output prediction with the correct label to calculate the error:</li>
+</section>
+<section id="to-learn" class="level1">
+<h1>To Learn</h1>
+<section id="what-is-an-audio" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-audio">1. What is an audio?</h2>
+<p>To digitize a sound wave we must turn the signal into a series of numbers so that we can input it into our models. This is done by measuring the amplitude of the sound at fixed intervals of time.</p>
+<p><img src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F1597879%2F83b6e80d378531b218538ed7b1a81bec%2Fsound-wave-digital.webp?generation=1713503756669247&amp;alt=media" class="img-fluid"></p>
+<p>Each such measurement is called a sample, and the sample rate is the number of samples per second. For instance, a common sampling rate is about 44,100 samples per second. That means that a 10-second music clip would have 441,000 samples!</p>
+</section>
+</section>
+<section id="pipeline" class="level1">
+<h1>Pipeline</h1>
+<section id="data-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing">1. Data Preprocessing</h2>
+<ol type="1">
+<li>Read the meta data dataframe</li>
+<li>Split the data into train and valid</li>
+<li>Add a column for path of the audio file</li>
+<li>Use this dataframe to convert audio to image</li>
 </ol>
-<p><span class="math display">\[error = y-y\hat{}\]</span></p>
-<ol start="3" type="1">
-<li><p>It then update the weight. If the prediction is too high, it adjust the weight to make a lower prediction the next time, and vice versa.</p></li>
-<li><p>Repeat!</p></li>
+</section>
+<section id="convert-audio-to-image" class="level2">
+<h2 class="anchored" data-anchor-id="convert-audio-to-image">2. Convert Audio to Image</h2>
+<ol type="1">
+<li>Read an audio file using soundfile.read method</li>
+<li>Chop the audio file into multiple audio files of 5 second each</li>
+<li>Convert all the audio files to spectrogram</li>
+<li>Stack all the images using numpy</li>
+<li>Save the image to disk</li>
 </ol>
-<p>Here’s how a since perceptron works to classify two classes :</p>
-<p><img src="pp1.gif" class="img-fluid"></p>
-<p><strong>Drawback of perceptron.</strong> Sometimes its not possible to get desired result with only perceptron. In the below example you can see the model in not able to draw a line to classify the data(linearly inseperable data)</p>
-<p><img src="pp2.gif" class="img-fluid"></p>
-<p><strong>Indroduction of ANN</strong> If you increase the number of neuron then you cann see model works pretty well. The stack of more than one neuron is called Multi Layer Perceptron or ANN.</p>
-<p><img src="ann.gif" class="img-fluid"></p>
-<p><strong>ANN using Keras</strong></p>
-<div id="50d215fd" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># TensorFlow and tf.keras</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper libraries</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras <span class="im">import</span> initializers</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.python.keras <span class="im">import</span> activations</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tf.__version__)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># downloading fashion_mnist data</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>fashion_mnist <span class="op">=</span> tf.keras.datasets.fashion_mnist</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>(train_images, train_labels), (test_images, test_labels) <span class="op">=</span> fashion_mnist.load_data()</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>class_names <span class="op">=</span> [<span class="st">'T-shirt/top'</span>, <span class="st">'Trouser'</span>, <span class="st">'Pullover'</span>, <span class="st">'Dress'</span>, <span class="st">'Coat'</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>               <span class="st">'Sandal'</span>, <span class="st">'Shirt'</span>, <span class="st">'Sneaker'</span>, <span class="st">'Bag'</span>, <span class="st">'Ankle boot'</span>]</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>train_images <span class="op">=</span> train_images <span class="op">/</span> <span class="fl">255.0</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>test_images <span class="op">=</span> test_images <span class="op">/</span> <span class="fl">255.0</span> </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>activation <span class="op">=</span> tf.keras.activations.relu</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> tf.keras.Sequential([</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Flatten(input_shape<span class="op">=</span>(<span class="dv">28</span>, <span class="dv">28</span>)),</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span>activation),</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Dense(<span class="dv">10</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,loss<span class="op">=</span>tf.keras.losses.SparseCategoricalCrossentropy(from_logits<span class="op">=</span><span class="va">True</span>),metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># model summary</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>model.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>c:\users\sonu.ramkumar.jha\desktop\experiments\env\lib\site-packages\numpy\_distributor_init.py:30: UserWarning: loaded more than 1 DLL from .libs:
-c:\users\sonu.ramkumar.jha\desktop\experiments\env\lib\site-packages\numpy\.libs\libopenblas.GK7GX5KEQ4F6UYO3P26ULGBQYHGQO7J4.gfortran-win_amd64.dll
-c:\users\sonu.ramkumar.jha\desktop\experiments\env\lib\site-packages\numpy\.libs\libopenblas.WCDJNK7YVMPZQ2ME2ZZHJJRJ3JIKNDB7.gfortran-win_amd64.dll
-  warnings.warn("loaded more than 1 DLL from .libs:"</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2.5.0
-Model: "sequential"
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-flatten (Flatten)            (None, 784)               0         
-_________________________________________________________________
-dense (Dense)                (None, 128)               100480    
-_________________________________________________________________
-dense_1 (Dense)              (None, 10)                1290      
-=================================================================
-Total params: 101,770
-Trainable params: 101,770
-Non-trainable params: 0
-_________________________________________________________________</code></pre>
-</div>
-</div>
-<div id="98535727" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model.fit(train_images, train_labels, epochs<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>test_loss, test_acc <span class="op">=</span> model.evaluate(test_images,  test_labels, verbose<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'test_loss'</span>, test_loss)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'test_accuracy'</span>, test_acc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Epoch 1/10
-1875/1875 [==============================] - 4s 2ms/step - loss: 0.5000 - accuracy: 0.8255
-Epoch 2/10
-1875/1875 [==============================] - 3s 1ms/step - loss: 0.3751 - accuracy: 0.8645
-Epoch 3/10
-1875/1875 [==============================] - 3s 2ms/step - loss: 0.3388 - accuracy: 0.8773
-Epoch 4/10
-1875/1875 [==============================] - 3s 2ms/step - loss: 0.3142 - accuracy: 0.8843
-Epoch 5/10
-1875/1875 [==============================] - 3s 2ms/step - loss: 0.2957 - accuracy: 0.8922
-Epoch 6/10
-1875/1875 [==============================] - 3s 2ms/step - loss: 0.2797 - accuracy: 0.8971
-Epoch 7/10
-1875/1875 [==============================] - 3s 2ms/step - loss: 0.2685 - accuracy: 0.8991
-Epoch 8/10
-1875/1875 [==============================] - 3s 1ms/step - loss: 0.2577 - accuracy: 0.9028
-Epoch 9/10
-1875/1875 [==============================] - 3s 1ms/step - loss: 0.2476 - accuracy: 0.9076
-Epoch 10/10
-1875/1875 [==============================] - 3s 1ms/step - loss: 0.2388 - accuracy: 0.9105
-313/313 - 0s - loss: 0.3403 - accuracy: 0.8798
-test_loss 0.34025073051452637
-test_accuracy 0.879800021648407</code></pre>
-</div>
-</div>
+</section>
+<section id="creating-dataset-and-dataloader" class="level2">
+<h2 class="anchored" data-anchor-id="creating-dataset-and-dataloader">3. Creating Dataset and Dataloader</h2>
+<ol type="1">
+<li>Use train and valid dataframe to create a dataset</li>
+<li>Read the row of the dataframe</li>
+<li>Load the corresponding saved numpy file with custom max number of images</li>
+<li>While training select one of the image randomly</li>
+<li>Convert to tensor, augmentate it</li>
+<li>Stack 2 duplicate images to make it 3 channel</li>
+<li>Normalize the image</li>
+<li>Create a batch of 64 images to pass it to model.</li>
+</ol>
+</section>
+<section id="model-and-training" class="level2">
+<h2 class="anchored" data-anchor-id="model-and-training">4. Model and Training</h2>
+<ol type="1">
+<li>Using tf_efficientnet_b0_ns model from timm</li>
+<li>Take a batch of images and target.</li>
+<li>Calculate cross entropy loss and iterate to train.</li>
+</ol>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">5. Resources</h2>
+<ol type="1">
+<li>Convert Audio To Spectrogram: <a href="https://www.kaggle.com/code/nischaydnk/split-creating-melspecs-stage-1" class="uri">https://www.kaggle.com/code/nischaydnk/split-creating-melspecs-stage-1</a></li>
+<li>Pytorch Lightning Inferece: <a href="https://www.kaggle.com/code/nischaydnk/birdclef-2023-pytorch-lightning-inference" class="uri">https://www.kaggle.com/code/nischaydnk/birdclef-2023-pytorch-lightning-inference</a></li>
+<li>Pytorch LIghtning training: <a href="https://www.kaggle.com/code/nischaydnk/birdclef-2023-pytorch-lightning-training-w-cmap" class="uri">https://www.kaggle.com/code/nischaydnk/birdclef-2023-pytorch-lightning-training-w-cmap</a></li>
+<li>Audio Deep Learning: <a href="https://www.kaggle.com/competitions/birdclef-2024/discussion/491668" class="uri">https://www.kaggle.com/competitions/birdclef-2024/discussion/491668</a></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
