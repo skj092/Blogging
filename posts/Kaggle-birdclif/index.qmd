@@ -6,7 +6,7 @@ date: "4/19/2024"
 ---
 
 ## AIM: To Identify Bird Species from their Sounds
-[![competition logo](./header.png '')](https://www.kaggle.com/competitions/birdclef-2024)
+[![](./header.png '')](https://www.kaggle.com/competitions/birdclef-2024)
 
 
 ## Provided Data
@@ -80,7 +80,7 @@ Each such measurement is called a sample, and the sample rate is the number of s
 
 1. Using tf_efficientnet_b0_ns model from timm
 2. Take a batch of images and target.
-3. Calculate cross entropy loss and iterate to train. 
+3. Calculate cross entropy loss and iterate to train.
 
 ## 5. Resources
 
