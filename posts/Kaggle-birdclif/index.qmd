@@ -6,6 +6,8 @@ date: "4/19/2024"
 ---
 
 ## AIM: To Identify Bird Species from their Sounds
+[![competition logo](./header.png '')](https://www.kaggle.com/competitions/birdclef-2024)
+
 
 ## Provided Data
 
@@ -42,7 +44,7 @@ date: "4/19/2024"
 
 To digitize a sound wave we must turn the signal into a series of numbers so that we can input it into our models. This is done by measuring the amplitude of the sound at fixed intervals of time.
 
-![](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F1597879%2F83b6e80d378531b218538ed7b1a81bec%2Fsound-wave-digital.webp?generation=1713503756669247&alt=media)
+![](./sound-wave-digital.webp)
 
 Each such measurement is called a sample, and the sample rate is the number of samples per second. For instance, a common sampling rate is about 44,100 samples per second. That means that a 10-second music clip would have 441,000 samples!
 

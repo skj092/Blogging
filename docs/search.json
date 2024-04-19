@@ -21,6 +21,20 @@
     "text": "Blurring the face area of people from videos is done in all news channels and to hide the identity of a person. With computer vision, We can automatically detect the face region of the person and use it to blur the image. In this project we will build a computer vision model which can detect face in an image and blur it.\n\n1. Read an image\n2. Convert it to grayscale\n3. load Cascade Classifier\n4. Detect Faces\n5. Draw Bounding Box\n6. Blur the face\n\n\nCode\n# Import necessary library\nimport cv2\nimport matplotlib.pyplot as plt\n\n\nStep-1: Read an image\n\n\nCode\nimg = cv2.imread('../images/face.jpg')\nplt.imshow(img[:,:,::-1]) # opencv read an image into BGR mode, to convert it into RGB we reverse the image array\n\n\n\n\n\n\n\n\n\nStep-2: Convert the image to grayscale\n\n\nCode\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nplt.imshow(gray, cmap='gray')\n\n\n\n\n\n\n\n\n\nStep-3: Loading OpenCV CascadeClassifier\n\n\nCode\nface_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')\n\n\nStep-4: Detecting faces in the grayscaled image\n\n\nCode\nfaces = face_classifier.detectMultiScale(gray)\n\n\nStep-5: Draw Blounding Box around the detected faces\n\n\nCode\nfor (x,y,w,h) in faces:\n    cv2.rectangle(img, (x,y), (x+w,y+h), (127,0,255),2)\n    plt.imshow(img[:,:,::-1])\n\n\n\n\n\n\n\n\n\nStep-6: Blur the face\n\n\nCode\n# select region of face in the original image\nROI = img[y:y+h, x:x+w]\n\n# blur the face region\nblur_face = cv2.GaussianBlur(ROI, (91,91),0)\n\n\n\n\nCode\n# replace original face with the blurred one\nimg[y:y+h, x:x+w] = blur_face\n\n\n\n\nCode\n# Final Image\nplt.imshow(img[:,:,::-1])"
   },
   {
+    "objectID": "posts/Kaggle-birdclif/index.html",
+    "href": "posts/Kaggle-birdclif/index.html",
+    "title": "BirdCLEF 2024",
+    "section": "",
+    "text": "competition logo"
+  },
+  {
+    "objectID": "posts/Kaggle-birdclif/index.html#aim-to-identify-bird-species-from-their-sounds",
+    "href": "posts/Kaggle-birdclif/index.html#aim-to-identify-bird-species-from-their-sounds",
+    "title": "BirdCLEF 2024",
+    "section": "",
+    "text": "competition logo"
+  },
+  {
     "objectID": "posts/Kaggle-birdclif/index.html#provided-data",
     "href": "posts/Kaggle-birdclif/index.html#provided-data",
     "title": "BirdCLEF 2024",
