@@ -91,71 +91,71 @@
     "text": "I am an Engineer.\nPersonality type: ENTJ-A\nProgram in Python and JavaScript.\nInterested in phychology, philosophy, and science.\nMildly Interested in\n\nLitrature, History, Anthropology"
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#provided-data",
-    "href": "posts/Kaggle-birdclif/index.html#provided-data",
+    "objectID": "posts/Kaggle-birdclef/index.html#provided-data",
+    "href": "posts/Kaggle-birdclef/index.html#provided-data",
     "title": "BirdCLEF 2024",
     "section": "Provided Data",
     "text": "Provided Data\n\ntrain_audios: Contain 182 folders, each folder contain multiple audio files of particular bird species.\ntrain_metadata.csv: Contain metadata of each audio file.\nunlabeled_soundscapes: Contain multiple audio files of bird sounds.\neBIrd_Taxonomy_v2021.csv: Data on the relationships between different species.\ntest_soundscapes: Only the hidden rerun copy of the test soundscape dirctory will only be populated.\nSampleSubmission.csv: A sample submission file in the correct format. First column is the filename, and remaining are scores for each bird species."
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#evaluation-metric",
-    "href": "posts/Kaggle-birdclif/index.html#evaluation-metric",
+    "objectID": "posts/Kaggle-birdclef/index.html#evaluation-metric",
+    "href": "posts/Kaggle-birdclef/index.html#evaluation-metric",
     "title": "BirdCLEF 2024",
     "section": "Evaluation Metric",
     "text": "Evaluation Metric\n\nA version of macro-averaged ROC-AUC that skips classes which have no true positive labels."
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#dataset-info",
-    "href": "posts/Kaggle-birdclif/index.html#dataset-info",
+    "objectID": "posts/Kaggle-birdclef/index.html#dataset-info",
+    "href": "posts/Kaggle-birdclef/index.html#dataset-info",
     "title": "BirdCLEF 2024",
     "section": "Dataset Info",
     "text": "Dataset Info\n\ntrain audio are in different length and sample rate is 32000\nIf an audio is for 6 second, when you read with soundfile, it will be 6*32000 = 192000 samples\nSo the size of array will be (192000,)\nSince we have to predict for each 5 second, we will split the audio into 5 second.\nNow, will select one of the 5 second audio and convert it into melspectrogram of shape (3, 128, 201)\nWhen we make batch of it the shape will be (bs, 3, 128, 201)\nModel will give output of shape (bs, num_classes), i.e. (bs, 182)"
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#status",
-    "href": "posts/Kaggle-birdclif/index.html#status",
+    "objectID": "posts/Kaggle-birdclef/index.html#status",
+    "href": "posts/Kaggle-birdclef/index.html#status",
     "title": "BirdCLEF 2024",
     "section": "Status",
     "text": "Status\n\nSetup local evaluation for the competition metric\nDo more EDA on the available data\nApply augmentation in the next submission."
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#what-is-an-audio",
-    "href": "posts/Kaggle-birdclif/index.html#what-is-an-audio",
+    "objectID": "posts/Kaggle-birdclef/index.html#what-is-an-audio",
+    "href": "posts/Kaggle-birdclef/index.html#what-is-an-audio",
     "title": "BirdCLEF 2024",
     "section": "1. What is an audio?",
     "text": "1. What is an audio?\nTo digitize a sound wave we must turn the signal into a series of numbers so that we can input it into our models. This is done by measuring the amplitude of the sound at fixed intervals of time.\n\nEach such measurement is called a sample, and the sample rate is the number of samples per second. For instance, a common sampling rate is about 44,100 samples per second. That means that a 10-second music clip would have 441,000 samples!"
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#data-preprocessing",
-    "href": "posts/Kaggle-birdclif/index.html#data-preprocessing",
+    "objectID": "posts/Kaggle-birdclef/index.html#data-preprocessing",
+    "href": "posts/Kaggle-birdclef/index.html#data-preprocessing",
     "title": "BirdCLEF 2024",
     "section": "1. Data Preprocessing",
     "text": "1. Data Preprocessing\n\nRead the meta data dataframe\nSplit the data into train and valid\nAdd a column for path of the audio file\nUse this dataframe to convert audio to image"
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#convert-audio-to-image",
-    "href": "posts/Kaggle-birdclif/index.html#convert-audio-to-image",
+    "objectID": "posts/Kaggle-birdclef/index.html#convert-audio-to-image",
+    "href": "posts/Kaggle-birdclef/index.html#convert-audio-to-image",
     "title": "BirdCLEF 2024",
     "section": "2. Convert Audio to Image",
     "text": "2. Convert Audio to Image\n\nRead an audio file using soundfile.read method\nChop the audio file into multiple audio files of 5 second each\nConvert all the audio files to spectrogram\nStack all the images using numpy\nSave the image to disk"
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#creating-dataset-and-dataloader",
-    "href": "posts/Kaggle-birdclif/index.html#creating-dataset-and-dataloader",
+    "objectID": "posts/Kaggle-birdclef/index.html#creating-dataset-and-dataloader",
+    "href": "posts/Kaggle-birdclef/index.html#creating-dataset-and-dataloader",
     "title": "BirdCLEF 2024",
     "section": "3. Creating Dataset and Dataloader",
     "text": "3. Creating Dataset and Dataloader\n\nUse train and valid dataframe to create a dataset\nRead the row of the dataframe\nLoad the corresponding saved numpy file with custom max number of images\nWhile training select one of the image randomly\nConvert to tensor, augmentate it\nStack 2 duplicate images to make it 3 channel\nNormalize the image\nCreate a batch of 64 images to pass it to model."
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#model-and-training",
-    "href": "posts/Kaggle-birdclif/index.html#model-and-training",
+    "objectID": "posts/Kaggle-birdclef/index.html#model-and-training",
+    "href": "posts/Kaggle-birdclef/index.html#model-and-training",
     "title": "BirdCLEF 2024",
     "section": "4. Model and Training",
     "text": "4. Model and Training\n\nUsing tf_efficientnet_b0_ns model from timm\nTake a batch of images and target.\nCalculate cross entropy loss and iterate to train."
   },
   {
-    "objectID": "posts/Kaggle-birdclif/index.html#resources",
-    "href": "posts/Kaggle-birdclif/index.html#resources",
+    "objectID": "posts/Kaggle-birdclef/index.html#resources",
+    "href": "posts/Kaggle-birdclef/index.html#resources",
     "title": "BirdCLEF 2024",
     "section": "5. Resources",
     "text": "5. Resources\n\nConvert Audio To Spectrogram: https://www.kaggle.com/code/nischaydnk/split-creating-melspecs-stage-1\nPytorch Lightning Inferece: https://www.kaggle.com/code/nischaydnk/birdclef-2023-pytorch-lightning-inference\nPytorch LIghtning training: https://www.kaggle.com/code/nischaydnk/birdclef-2023-pytorch-lightning-training-w-cmap\nAudio Deep Learning: https://www.kaggle.com/competitions/birdclef-2024/discussion/491668"
