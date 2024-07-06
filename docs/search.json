@@ -88,7 +88,35 @@
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "I am an Engineer.\nPersonality type: ENTJ-A\nProgram in Python and JavaScript.\nInterested in phychology, philosophy, and science.\nMildly Interested in\n\nLitrature, History, Anthropology"
+    "text": "Hello! I’m Sonu Jha, an AI Engineer with a passion for leveraging cutting-edge technology to solve complex problems. With a background in Mathematics and extensive experience in Machine Learning and Computer Vision, I’m constantly exploring the frontiers of Artificial Intelligence."
+  },
+  {
+    "objectID": "about.html#professional-journey",
+    "href": "about.html#professional-journey",
+    "title": "About Me",
+    "section": "Professional Journey",
+    "text": "Professional Journey\nCurrently, I’m working as an AI Engineer at Signzy Technology in Bangalore, where I’ve had the opportunity to work on exciting projects such as:\n\nDeveloping an Aadhaar Masker using advanced image segmentation techniques\nCreating a forgery detection system for identity documents\nImplementing salary slip extraction using Langchain and GenerativeAI\nBuilding a signature verification model using Siamese Architecture\n\nPrior to this, I worked as an Associate Software Developer at Accenture Solution in Mumbai, where I honed my skills in data analysis and web development."
+  },
+  {
+    "objectID": "about.html#technical-expertise",
+    "href": "about.html#technical-expertise",
+    "title": "About Me",
+    "section": "Technical Expertise",
+    "text": "Technical Expertise\nMy expertise lies in:\n\nMachine Learning and Deep Learning (PyTorch, Keras, FastAI, Hugging Face)\nComputer Vision tasks (Image Classification, Object Detection, Image Segmentation)\nNatural Language Processing (NLP) and Understanding (NLU)\nAPI development (FastAPI, Falcon, Node.js, Javascript)\nDevOps tools (Docker, CI/CD, Grafana, Kibana)\n\nI’m particularly excited about the potential of Generative AI and have been integrating tools like Langchain, GPT, and Bard to improve AI microservices."
+  },
+  {
+    "objectID": "about.html#achievements-and-interests",
+    "href": "about.html#achievements-and-interests",
+    "title": "About Me",
+    "section": "Achievements and Interests",
+    "text": "Achievements and Interests\nI’m proud to have secured a bronze medal in the UBC Ovarian Cancer Subtype Classification competition on Kaggle. I’ve also been recognized for my work in improving AI service accuracy through the integration of Generative AI at Signzy Technology.\nBeyond the world of AI, I have a keen interest in mountaineering and have completed a Basic Mountaineering Course from the National Institute of Mountaineering and Adventure Sports."
+  },
+  {
+    "objectID": "about.html#sharing-knowledge",
+    "href": "about.html#sharing-knowledge",
+    "title": "About Me",
+    "section": "Sharing Knowledge",
+    "text": "Sharing Knowledge\nI believe in the power of education and enjoy sharing my knowledge. I’ve had the privilege of being invited as a guest lecturer to present on “Application of Mathematics in Machine Learning” at R.D National College in Mumbai.\nThrough this blog, I aim to share my insights, experiences, and learnings in the field of AI and technology. Whether you’re a fellow AI enthusiast, a student of technology, or simply curious about the world of artificial intelligence, I hope you’ll find something valuable here.\nFeel free to connect with me on LinkedIn or check out my projects on GitHub. Let’s explore the exciting world of AI together!"
   },
   {
     "objectID": "posts/Kaggle-birdclef/index.html#provided-data",
