@@ -4,6 +4,8 @@ project:
 
 website:
   title: "Home"
+  site-url: https://sonujha.tech
+  description: "Another data science student’s blogs"
   navbar:
     right:
       - about.qmd
@@ -11,6 +13,8 @@ website:
         href: https://github.com/skj092
       - icon: twitter
         href: https://twitter.com/Sonu_Kumar_Jha
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme:
